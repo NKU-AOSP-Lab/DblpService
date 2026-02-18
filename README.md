@@ -1,9 +1,14 @@
 <p align="center">
-  <img src="./static/dblpservice-logo.svg" alt="DblpService Logo" width="56" style="vertical-align:middle;" />
-  <span style="font-size:2rem;font-weight:700;vertical-align:middle;margin-left:10px;">DblpService</span>
+  <img src="./static/dblpservice-logo.svg" alt="DblpService Logo" width="52" />
+  <strong>DblpService</strong>
 </p>
 
-<p align="center">DBLP build-and-query backend service for CoAuthors and CiteVerifier.</p>
+<p align="center">DBLP build-and-query backend service.</p>
+
+<p align="center">
+  <a href="./README.md"><strong>EN</strong></a> |
+  <a href="./README.zh-CN.md"><strong>CN</strong></a>
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-0.1.0-1f7a8c" alt="version" />
@@ -12,70 +17,47 @@
   <img src="https://img.shields.io/badge/docs-MkDocs-526CFE?logo=materialformkdocs&logoColor=white" alt="docs" />
 </p>
 
-## 中文说明
+## Overview
 
-DblpService 负责 DBLP 数据下载、解析、建库与查询服务，是 CoAuthors / CiteVerifier 的后端基础能力。
+DblpService is a reusable DBLP backend for data bootstrap, SQLite build, and query serving.
+It can be integrated by CoAuthors, CiteVerifier, and other systems that need local DBLP data services.
 
-### 核心能力
+## Core Capabilities
 
-- Bootstrap 管理页面（`/bootstrap`）
-- DBLP 查询接口（健康、统计、共作查询）
-- Pipeline 控制接口（开始、停止、重置、状态）
-- 本地 SQLite 数据服务（`dblp.sqlite`）
+- DBLP source download and parsing pipeline
+- Bootstrap control console (`/bootstrap`)
+- Query APIs (`/api/health`, `/api/stats`, `/api/coauthors/pairs`)
+- Pipeline lifecycle APIs (`/api/start`, `/api/stop`, `/api/reset`, `/api/state`)
 
-### 本地启动
+## Quick Start
 
 ```bash
 cd DblpService
 python -m pip install -r requirements.txt
-set CORS_ORIGINS=http://localhost:8090
 python -m uvicorn app:app --host 0.0.0.0 --port 8091
 ```
 
-访问：
+Open:
 
 - `http://localhost:8091/bootstrap`
 - `http://localhost:8091/`
 
-### 关键环境变量
+## Key Environment Variables
 
-- `DATA_DIR`（默认 `./data`）
-- `DB_PATH`（默认 `${DATA_DIR}/dblp.sqlite`）
-- `CORS_ORIGINS`（逗号分隔）
-- `DB_BUSY_TIMEOUT_MS`（默认 `30000`）
+- `DATA_DIR` (default: `./data`)
+- `DB_PATH` (default: `${DATA_DIR}/dblp.sqlite`)
+- `CORS_ORIGINS` (comma-separated origins)
+- `DB_BUSY_TIMEOUT_MS` (default: `30000`)
 
-### 文档
+## Documentation
 
-- 中文：`docs/zh/`
-- English：`docs/en/`
-- 本地预览：
+- English docs: `docs/en/`
+- Chinese docs: `docs/zh/`
+
+Local preview:
 
 ```bash
 cd DblpService
 python -m pip install -r docs/requirements.txt
 mkdocs serve
 ```
-
-## English Overview
-
-DblpService is the DBLP backend that handles data bootstrap, SQLite build, and query APIs.
-
-### Capabilities
-
-- Bootstrap web console
-- Health/stats/query APIs
-- Pipeline lifecycle control
-- Fullmeta-compatible SQLite serving
-
-### Run Locally
-
-```bash
-cd DblpService
-python -m pip install -r requirements.txt
-python -m uvicorn app:app --host 0.0.0.0 --port 8091
-```
-
-### Documentation
-
-- Chinese docs: `docs/zh/`
-- English docs: `docs/en/`
