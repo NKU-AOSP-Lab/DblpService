@@ -48,8 +48,8 @@ Open:
 
 ## Documentation
 
-- English docs: `docs/en/`
-- Chinese docs: `docs/zh/`
+- English docs: https://dblpservice.readthedocs.io/en/latest/
+- Docs source (in repo): `docs/en/`, `docs/zh/`
 
 Local preview:
 
