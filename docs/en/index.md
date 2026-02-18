@@ -1,5 +1,5 @@
 ﻿<p align="center">
-  <img src="../assets/logo.svg" alt="DblpService Logo" width="56" style="vertical-align:middle;" />
+  <img src="/en/latest/image/logo.svg" alt="DblpService Logo" width="56" style="vertical-align:middle;" />
   <span style="font-size:1.8rem;font-weight:700;vertical-align:middle;margin-left:8px;">DblpService Documentation</span>
 </p>
 
@@ -34,5 +34,7 @@ DblpService is the DBLP build-and-query backend used by CoAuthors and CiteVerifi
 5. [Operations](operations.md)
 6. [Troubleshooting](troubleshooting.md)
 7. [Changelog](changelog.md)
+
+
 
 

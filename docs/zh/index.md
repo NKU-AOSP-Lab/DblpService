@@ -1,5 +1,5 @@
 ﻿<p align="center">
-  <img src="../assets/logo.svg" alt="DblpService Logo" width="56" style="vertical-align:middle;" />
+  <img src="/en/latest/image/logo.svg" alt="DblpService Logo" width="56" style="vertical-align:middle;" />
   <span style="font-size:1.8rem;font-weight:700;vertical-align:middle;margin-left:8px;">DblpService 文档</span>
 </p>
 
@@ -34,3 +34,5 @@ DblpService 是 CoAuthors 与 CiteVerifier 共同使用的 DBLP 构建与查询�
 5. [运维手册](operations.md)
 6. [故障排查](troubleshooting.md)
 7. [变更记录](changelog.md)
+
+

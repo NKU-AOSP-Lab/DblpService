@@ -1,11 +1,11 @@
 ﻿site_name: DblpService Wiki
 site_description: DblpService build and query backend documentation
-site_url: https://dblpservice.readthedocs.io/
+site_url: !ENV [READTHEDOCS_CANONICAL_URL, "https://dblpservice.readthedocs.io/en/latest/"]
 repo_name: DblpService
 
 theme:
   name: material
-  logo: assets/logo.svg
+  logo: image/logo.svg
   palette:
     - scheme: default
       primary: custom
