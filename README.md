@@ -1,14 +1,11 @@
-<p align="center">
-  <img src="./static/dblpservice-logo.svg" alt="DblpService Logo" width="52" />
+﻿<div align="center" style="display:flex;justify-content:center;align-items:center;gap:8px;">
+  <img src="./static/dblpservice-logo.svg" alt="DblpService Logo" width="34" />
   <strong>DblpService</strong>
-</p>
+</div>
 
 <p align="center">DBLP build-and-query backend service.</p>
 
-<p align="center">
-  <a href="./README.md"><strong>EN</strong></a> |
-  <a href="./README.zh-CN.md"><strong>CN</strong></a>
-</p>
+<p align="center">[<a href="./README.md"><strong>EN</strong></a>] | [<a href="./README.zh-CN.md"><strong>CN</strong></a>]</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-0.1.0-1f7a8c" alt="version" />
@@ -24,10 +21,10 @@ It can be integrated by CoAuthors, CiteVerifier, and other systems that need loc
 
 ## Core Capabilities
 
-- DBLP source download and parsing pipeline
-- Bootstrap control console (`/bootstrap`)
-- Query APIs (`/api/health`, `/api/stats`, `/api/coauthors/pairs`)
-- Pipeline lifecycle APIs (`/api/start`, `/api/stop`, `/api/reset`, `/api/state`)
+- DBLP source download and parsing pipeline.
+- Bootstrap control console (`/bootstrap`).
+- Query APIs (`/api/health`, `/api/stats`, `/api/coauthors/pairs`).
+- Pipeline lifecycle APIs (`/api/start`, `/api/stop`, `/api/reset`, `/api/state`).
 
 ## Quick Start
 
@@ -61,3 +58,5 @@ cd DblpService
 python -m pip install -r docs/requirements.txt
 mkdocs serve
 ```
+
+

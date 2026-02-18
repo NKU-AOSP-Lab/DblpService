@@ -1,14 +1,11 @@
-<p align="center">
-  <img src="./static/dblpservice-logo.svg" alt="DblpService Logo" width="52" />
+﻿<div align="center" style="display:flex;justify-content:center;align-items:center;gap:8px;">
+  <img src="./static/dblpservice-logo.svg" alt="DblpService Logo" width="34" />
   <strong>DblpService</strong>
-</p>
+</div>
 
-<p align="center">DBLP 鏁版嵁鏋勫缓涓庢煡璇㈠悗绔湇鍔°€?/p>
+<p align="center">DBLP 数据构建与查询后端服务。</p>
 
-<p align="center">
-  <a href="./README.md"><strong>EN</strong></a> |
-  <a href="./README.zh-CN.md"><strong>CN</strong></a>
-</p>
+<p align="center">[<a href="./README.md"><strong>EN</strong></a>] | [<a href="./README.zh-CN.md"><strong>CN</strong></a>]</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-0.1.0-1f7a8c" alt="version" />
@@ -17,34 +14,48 @@
   <img src="https://img.shields.io/badge/docs-MkDocs-526CFE?logo=materialformkdocs&logoColor=white" alt="docs" />
 </p>
 
-## 椤圭洰璇存槑
+## 项目概览
 
-DblpService 鏄彲澶嶇敤鐨?DBLP 鍚庣锛岃礋璐ｆ暟鎹笅杞姐€佽В鏋愩€丼QLite 寤哄簱鍜屾煡璇㈡湇鍔°€?瀹冨彲浠ヨ CoAuthors銆丆iteVerifier 浠ュ強鍏朵粬闇€瑕佹湰鍦?DBLP 鏁版嵁鑳藉姏鐨勭郴缁熷鐢ㄣ€?
-## 鏍稿績鑳藉姏
+DblpService 是可复用的 DBLP 后端能力层，负责数据下载、解析、SQLite 构建和查询服务，既可独立部署，也可被 CoAuthors、CiteVerifier 等系统集成。
 
-- DBLP 婧愭暟鎹笅杞戒笌瑙ｆ瀽娴佹按绾?- Bootstrap 绠＄悊椤甸潰锛坄/bootstrap`锛?- 鏌ヨ鎺ュ彛锛坄/api/health`銆乣/api/stats`銆乣/api/coauthors/pairs`锛?- Pipeline 鎺у埗鎺ュ彛锛坄/api/start`銆乣/api/stop`銆乣/api/reset`銆乣/api/state`锛?
-## 蹇€熷紑濮?
+## 核心能力
+
+- DBLP 源数据下载与解析流水线。
+- Bootstrap 控制台（`/bootstrap`）。
+- 查询接口（`/api/health`、`/api/stats`、`/api/coauthors/pairs`）。
+- 流水线生命周期接口（`/api/start`、`/api/stop`、`/api/reset`、`/api/state`）。
+
+## 快速开始
+
 ```bash
 cd DblpService
 python -m pip install -r requirements.txt
 python -m uvicorn app:app --host 0.0.0.0 --port 8091
 ```
 
-璁块棶锛?
+访问：
+
 - `http://localhost:8091/bootstrap`
 - `http://localhost:8091/`
 
-## 鍏抽敭鐜鍙橀噺
+## 关键环境变量
 
-- `DATA_DIR`锛堥粯璁わ細`./data`锛?- `DB_PATH`锛堥粯璁わ細`${DATA_DIR}/dblp.sqlite`锛?- `CORS_ORIGINS`锛堥€楀彿鍒嗛殧锛?- `DB_BUSY_TIMEOUT_MS`锛堥粯璁わ細`30000`锛?
-## 鏂囨。
+- `DATA_DIR`（默认：`./data`）
+- `DB_PATH`（默认：`${DATA_DIR}/dblp.sqlite`）
+- `CORS_ORIGINS`（逗号分隔来源）
+- `DB_BUSY_TIMEOUT_MS`（默认：`30000`）
 
-- 鑻辨枃鏂囨。锛歚docs/en/`
-- 涓枃鏂囨。锛歚docs/zh/`
+## 文档
 
-鏈湴棰勮锛?
+- 英文文档：`docs/en/`
+- 中文文档：`docs/zh/`
+
+本地预览：
+
 ```bash
 cd DblpService
 python -m pip install -r docs/requirements.txt
 mkdocs serve
 ```
+
+
